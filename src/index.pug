@@ -1,0 +1,40 @@
+doctype html
+html
+	head
+	meta(charset='utf-8')
+	title Stranger Things
+	meta(name='description', content='')
+	script(src="assets/js/main.js")
+	link(rel="stylesheet", href="assets/css/main.css")
+
+	body
+		
+		img.netflix(src="assets/images/netflix.png")
+
+		a-scene()
+			a-assets
+				a-asset-item#thingsFont(src="assets/fonts/font.json")
+				a-asset-item#tv(src="assets/models/tv.dae")
+				img#ground(src="assets/images/ground.jpg")
+				audio#sound(src="assets/sounds/underwater.mp3" preload="auto" loop autoplay)
+
+			a-entity#person(position="0 1.67 0")
+				a-entity(camera,look-controls)
+
+			a-sky(color="#082c45")
+			a-entity(sound="src: #sound")
+			a-cylinder#plate(src="#ground" height="0.5" radius="3" position="0 0 0" repeat="10 10")
+			a-entity#particle(position="0 0 0" particle-system="preset: dust; type:3; opacity:0.2;size:10;accelerationValue:0 0 0.01; rotationAngle:200; rotationAxis:z; maxParticleCount:1000;")
+
+			a-entity#two(text="text: 2; font: #thingsFont;" scale="5 5 2" position="1 2 3" rotation="0 180 0" material="color:#c3140a;opacity:0.4;transparent:true;")
+			
+			a-entity#countdown(position="-3 2 -5")
+				a-entity(countdown text="text: 2" position="0 0 0" material="color:#c3140a;")
+
+			a-collada-model(src="#tv" position="-1.25 1 -2.3" rotation="0 45 180")
+				a-entity(geometry="primitive:plane;height:0.46;width:0.6;" material="shader:gif;src:url(assets/images/st.gif);opacity:1;height:0.5;", position="-0.12 0.41 0.33")
+
+
+<!--THIS WAS MADE BY STUDIO ZERO-->
+<!-- THIS WAS MADE BY STUDIO ZERO -->
+<!--THIS WAS MADE BY STUDIO ZERO-->
