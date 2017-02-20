@@ -6,7 +6,7 @@
   "author": "Shaun Dunne <shaun@studiozero.co>",
   "license": "MIT",
   "scripts": {
-    "start": "npm run watch:html & npm run start:budo & npm run watch:css & npm run watch:images & npm run copy:font & npm run copy:models",
+    "start": "npm run watch:html & npm run start:budo & npm run watch:css & npm run watch:images & npm run copy:font & npm run copy:models & wait",
     "start:budo": "budo src/assets/js/main.js:dist/assets/js/main.js --dir ./dist/ --serve assets/js/main.js --live --verbose --port 3000",
     "prebuild": "rimraf dist/assts/{css/*,js/*,images/*}",
     "build": "npm run build:html & npm run build:js & npm run build:css",

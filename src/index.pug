@@ -1,8 +1,17 @@
 doctype html
 html
 	head
+		- var site = { title: 'Stranger Things 2 Countdown', url: 'http://www.strangerthingscountdown.com', image: 'http://strangerthings.surge.sh/assets/images/og-image.jpg', favicon: 'http://exhalevr.surge.sh/assets/images/favicon.png', description: 'A Stranger Things 2 Countdown in VR.'}
+		each val, key in site
+			meta(property='og:'+key, content=val)
+
+		- var tCard = { description: site.description, title:site.title, site: '@studiozeroco', card: 'summary_large_image', image: site.image}
+		
+		each val, key in tCard
+			meta(name='twitter:'+key, content=val)
+
 	meta(charset='utf-8')
-	title Stranger Things
+	title #{site.title}
 	meta(name='description', content='')
 	script(src="assets/js/main.js")
 	link(rel="stylesheet", href="assets/css/main.css")
@@ -10,20 +19,22 @@ html
 	body
 		
 		img.netflix(src="assets/images/netflix.png")
+		.share
 
-		a-scene()
+
+		a-scene(fog="type: exponential; color: #fff; density:0.00010")
 			a-assets
 				a-asset-item#thingsFont(src="assets/fonts/font.json")
 				a-asset-item#tv(src="assets/models/tv.dae")
 				img#ground(src="assets/images/ground.jpg")
-				audio#sound(src="assets/sounds/underwater.mp3" preload="auto" loop autoplay)
+				//- audio#sound(src="assets/sounds/underwater.mp3" loop autoplay)
 
 			a-entity#person(position="0 1.67 0")
-				a-entity(camera,look-controls)
+				a-entity(camera, look-controls)
+				a-entity(light="color:#082c45;type:point;angle:0;")
 
-			a-sky(color="#082c45")
-			a-entity(sound="src: #sound")
-			a-cylinder#plate(src="#ground" height="0.5" radius="3" position="0 0 0" repeat="10 10")
+			a-sky(color="black")
+			a-cylinder#plate(material="color:black;metalness:1;" src="" height="0.5" radius="3" position="0 0 0" repeat="10 10")
 			a-entity#particle(position="0 0 0" particle-system="preset: dust; type:3; opacity:0.2;size:10;accelerationValue:0 0 0.01; rotationAngle:200; rotationAxis:z; maxParticleCount:1000;")
 
 			a-entity#two(text="text: 2; font: #thingsFont;" scale="5 5 2" position="1 2 3" rotation="0 180 0" material="color:#c3140a;opacity:0.4;transparent:true;")
@@ -31,10 +42,10 @@ html
 			a-entity#countdown(position="-3 2 -5")
 				a-entity(countdown text="text: 2" position="0 0 0" material="color:#c3140a;")
 
-			a-collada-model(src="#tv" position="-1.25 1 -2.3" rotation="0 45 180")
-				a-entity(geometry="primitive:plane;height:0.46;width:0.6;" material="shader:gif;src:url(assets/images/st.gif);opacity:1;height:0.5;", position="-0.12 0.41 0.33")
+			a-collada-model(src="#tv" material="shader:gif;src:url(assets/images/st.gif);opacity:1;height:0.5;" position="-2.30 0.40 -1.5" rotation="10 45 -45")
+				a-entity(geometry="primitive:plane;height:0.46;width:0.6;" material="shader:gif;src:url(assets/images/st.gif);opacity:1;height:0.5;", position="-0.12 0.39 0.33")
 
 
 <!--THIS WAS MADE BY STUDIO ZERO-->
 <!-- THIS WAS MADE BY STUDIO ZERO -->
-<!--THIS WAS MADE BY STUDIO ZERO-->
+<!--THIS WAS MADE BY STUDIO ZERO 082c45-->
