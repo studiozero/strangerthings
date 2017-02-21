@@ -28,25 +28,20 @@ html, body{
 
 .share{
 
-	a{
-		color:white;
-		text-decoration: none;
+	position:absolute;
+	bottom:10px;
+	left:20px;
 
-		background:srgba(0,0,0,.35);
-		left: 20px;
-		bottom: 20px;
+	a{
+		text-decoration: none;
 		cursor: pointer;
-		min-width: 50px;
-		min-height: 30px;
-		position: absolute;
 		transition: background-color .05s ease;
 		-webkit-transition: background-color .05s ease;
 		z-index: 9999;
-	
-		&:hover{
-			background-color: #666;
-		}
+		margin-left:10px;
 	}
+
+
 
 }
 
@@ -65,6 +60,10 @@ html, body{
 
 .share-btn-twitter .share-btn-icon:before {
 	content: "\ea91";
+}
+
+.share-btn-facebook .share-btn-icon:before {
+	content: "\ea8c";
 }
 
 
