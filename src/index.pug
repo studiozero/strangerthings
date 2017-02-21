@@ -12,7 +12,7 @@ html
 
 	meta(charset='utf-8')
 	title #{site.title}
-	meta(name='description', content='')
+	meta(name='description', content="#{site.description}")
 	script(src="assets/js/main.js")
 	link(rel="stylesheet", href="assets/css/main.css")
 
@@ -38,17 +38,17 @@ html
 			a-sky(src="#background")
 			a-entity#particle(position="0 0 0" particle-system="preset: dust; type:3; opacity:0.2;size:8;accelerationValue:0 0 0.01; rotationAngle:200; rotationAxis:z; maxParticleCount:50;")
 
-			a-entity#two(text="text: 2; font: #thingsFont;" scale="5 5 2" position="1 2 3" rotation="0 180 0" material="color:#c3140a;opacity:0.4;transparent:true;")
+			a-entity#two(text="text: 2; font: #thingsFont;" scale="5 5 2" position="1 0 5" rotation="0 180 0" material="color:#650505;metalness:0.5; roughness: 0.2; sphericalEnvMap: #background;")
 			
 			a-entity#countdown(position="-2.5 -0.2 -8")
-				a-entity(countdown text="text: 2" position="0 0 0" material="color:#650505;")
+				a-entity(countdown text="text: ...starting countdown; font:#thingsFont" position="0 0 0" material="color:#650505;")
 
 			a-entity(geometry="primitive:plane;height:0.75;width:1;" material="shader:gif;src:url(http://res.cloudinary.com/studio-zero/image/upload/v1487668273/st_rklgjf.gif);opacity:0.5;", position="2.4 0.4 2", rotation="0 230 0")
 
 
 <!--THIS WAS MADE BY STUDIO ZERO-->
 <!--THIS WAS MADE BY STUDIO ZERO -->
-<!--THIS WAS MADE BY STUDIO ZERO 082c45 -->
+<!--THIS WAS MADE BY STUDIO ZERO -->
 
 	script.
 		(function(s,t,u,d,i,o,z){s['GoogleAnalyticsObject']=i;s[i]=s[i]||function(){
