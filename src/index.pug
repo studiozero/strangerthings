@@ -20,14 +20,16 @@ html
 		
 		img.netflix(src="assets/images/netflix.png")
 		.share
+			a(class="share-btn share-btn-branded share-btn-facebook" href="#" title="Share on Facebook")
+				span(class="share-btn-icon")
+			a(class="share-btn share-btn-branded share-btn-twitter" href="#" title="Share on Twitter")
+				span(class="share-btn-icon")
 
 
 		a-scene()
 			a-assets
 				a-asset-item#thingsFont(src="assets/fonts/font.json")
-				//- a-asset-item#tv(src="assets/models/tv.dae")
-				img#ground(src="assets/images/ground.jpg")
-				img#background(src="assets/images/background.png")
+				img#background(src="http://res.cloudinary.com/studio-zero/image/upload/v1487668256/background_rljwo7.png")
 				//- audio#sound(src="assets/sounds/underwater.mp3" loop autoplay)
 
 			a-entity#person(position="0 1.67 0")
@@ -38,15 +40,15 @@ html
 
 			a-entity#two(text="text: 2; font: #thingsFont;" scale="5 5 2" position="1 2 3" rotation="0 180 0" material="color:#c3140a;opacity:0.4;transparent:true;")
 			
-			a-entity#countdown(position="-3 2 -5")
-				a-entity(countdown text="text: 2" position="0 0 0" material="color:#b81d24;")
+			a-entity#countdown(position="-2.5 -0.2 -8")
+				a-entity(countdown text="text: 2" position="0 0 0" material="color:#650505;")
 
-			a-entity(geometry="primitive:plane;height:0.75;width:1;" material="shader:gif;src:url(assets/images/st.gif);opacity:0.5;", position="2.4 0.4 2", rotation="0 230 0")
+			a-entity(geometry="primitive:plane;height:0.75;width:1;" material="shader:gif;src:url(http://res.cloudinary.com/studio-zero/image/upload/v1487668273/st_rklgjf.gif);opacity:0.5;", position="2.4 0.4 2", rotation="0 230 0")
 
 
 <!--THIS WAS MADE BY STUDIO ZERO-->
 <!--THIS WAS MADE BY STUDIO ZERO -->
-<!--THIS WAS MADE BY STUDIO ZERO 082c45-->
+<!--THIS WAS MADE BY STUDIO ZERO 082c45 -->
 
 	script.
 		(function(s,t,u,d,i,o,z){s['GoogleAnalyticsObject']=i;s[i]=s[i]||function(){

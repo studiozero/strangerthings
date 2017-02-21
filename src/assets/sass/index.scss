@@ -2,10 +2,232 @@ html, body{
 	background:black;
 }
 
+@font-face {
+	font-family: 'share-buttons';
+	src:url('https://cdn.rawgit.com/sunnysingh/share-buttons/v1.0.0/build/fonts/share-buttons.eot?gpra60');
+	src:url('https://cdn.rawgit.com/sunnysingh/share-buttons/v1.0.0/build/fonts/share-buttons.eot?#iefixgpra60') format('embedded-opentype'),
+			url('https://cdn.rawgit.com/sunnysingh/share-buttons/v1.0.0/build/fonts/share-buttons.woff?gpra60') format('woff'),
+			url('https://cdn.rawgit.com/sunnysingh/share-buttons/v1.0.0/build/fonts/share-buttons.ttf?gpra60') format('truetype'),
+			url('https://cdn.rawgit.com/sunnysingh/share-buttons/v1.0.0/build/fonts/share-buttons.svg?gpra60#share-buttons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 .netflix{
-	width:150px;
+	width:80px;
 	position:absolute;
 	top:20px;
 	left:20px;
 	z-index:2;
+
+	@media screen and (min-width: 720px) {
+		width:150px;
+	}
+
+}
+
+.share{
+
+	a{
+		color:white;
+		text-decoration: none;
+
+		background:srgba(0,0,0,.35);
+		left: 20px;
+		bottom: 20px;
+		cursor: pointer;
+		min-width: 50px;
+		min-height: 30px;
+		position: absolute;
+		transition: background-color .05s ease;
+		-webkit-transition: background-color .05s ease;
+		z-index: 9999;
+	
+		&:hover{
+			background-color: #666;
+		}
+	}
+
+}
+
+.share-btn,
+.share-btn * {
+  box-sizing: border-box;
+}
+
+// Reset box-sizing
+.share-btn,
+.share-btn *,
+.share-btn *:before,
+.share-btn *:after {
+	box-sizing: border-box;
+}
+
+.share-btn-twitter .share-btn-icon:before {
+	content: "\ea91";
+}
+
+
+// All share button styles are enclosed in .share-btn
+.share-btn {
+	$color-bg: #e0e0e0;
+	$color: #111;
+	
+	position: relative;
+	display: inline-block;
+	height: 24px;
+	margin: 0;
+	padding: 2px 8px;
+	line-height: 1.53;
+	letter-spacing: .04em;
+	vertical-align: top;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	color: $color;
+	background: $color-bg;
+	border: 1px solid darken($color-bg, 10%);
+	border-radius: 2px;
+	text-decoration: none;
+	transition: all 0.2s ease;
+	
+	&:hover,
+	&:focus {
+		background: darken($color-bg, 5%);
+		border-color: darken($color-bg, 15%);
+		text-decoration: none;
+		color: $color;
+	}
+	
+	&:active {
+		background: darken($color-bg, 10%);
+		border-color: darken($color-bg, 20%);
+		text-decoration: none;
+		color: $color;
+	}
+	
+	&.share-btn-sm {
+		height: 20px;
+		font-size: 10px;
+		padding: 0 8px;
+		line-height: 1.6;
+	}
+	
+	&.share-btn-lg {
+		height: 28px;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+	
+	// More button
+	.share-btn-text-sr {
+		// Screen readers only
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0,0,0,0);
+		border: 0;
+	}
+	
+	// Branded
+	
+	&.share-btn-branded {
+		color: #fff;
+	}
+	
+	&.share-btn-branded.share-btn-twitter {
+		$color-brand: #55acee;
+		background: $color-brand;
+		border-color: darken($color-brand, 5%);
+		&:hover, &:focus {
+			background: darken($color-brand, 5%);
+			border-color: darken($color-brand, 10%);
+		}
+		&:active {
+			background: darken($color-brand, 10%);
+			border-color: darken($color-brand, 15%);
+		}
+	}
+	
+	&.share-btn-branded.share-btn-facebook {
+		$color-brand: #3b5998;
+		background: $color-brand;
+		border-color: darken($color-brand, 5%);
+		&:hover, &:focus {
+			background: darken($color-brand, 5%);
+			border-color: darken($color-brand, 10%);
+		}
+		&:active {
+			background: darken($color-brand, 10%);
+			border-color: darken($color-brand, 15%);
+		}
+	}
+	
+	&.share-btn-branded.share-btn-reddit {
+		$color-brand: #ff4500;
+		background: $color-brand;
+		color: #fff;
+		border-color: darken($color-brand, 5%);
+		&:hover, &:focus {
+			background: darken($color-brand, 5%);
+			border-color: darken($color-brand, 10%);
+		}
+		&:active {
+			background: darken($color-brand, 10%);
+			border-color: darken($color-brand, 15%);
+		}
+	}
+	
+	// Share icon
+	&.share-btn-twitter .share-btn-icon,
+	&.share-btn-googleplus .share-btn-icon,
+	&.share-btn-tumblr .share-btn-icon,
+	&.share-btn-linkedin .share-btn-icon,
+	&.share-btn-pinterest .share-btn-icon,
+	&.share-btn-stumbleupon .share-btn-icon,
+	&.share-btn-delicious .share-btn-icon,
+	&.share-btn-more .share-btn-icon {
+		position: relative;
+		top: 1px;
+	}
+	
+	// Super hacky but needed until a better fix
+	@-moz-document url-prefix() {
+		&.share-btn-twitter .share-btn-icon,
+		&.share-btn-googleplus .share-btn-icon,
+		&.share-btn-tumblr .share-btn-icon,
+		&.share-btn-linkedin .share-btn-icon,
+		&.share-btn-pinterest .share-btn-icon,
+		&.share-btn-stumbleupon .share-btn-icon,
+		&.share-btn-delicious .share-btn-icon,
+		&.share-btn-more .share-btn-icon {
+			top: 0;
+		}
+	}
+
+	&.share-btn-more.share-btn-lg .share-btn-icon {
+		top: 2px;
+	}
+	
+	// Text
+	.share-btn-text {
+		padding-left: 2px;
+	}
+}
+
+.share-btn-icon {
+	font-family: 'share-buttons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
