@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		- var site = { title: 'Countdown to Stranger Things Season 2', url: 'http://www.strangerthingscountdown.com', image: 'http://strangerthings.surge.sh/assets/images/og-image.jpg', favicon: 'http://strangerthings.surge.sh/assets/images/favicon.png', description: 'How much longer do you have to wait until returning to The Upside Down? Stranger Things Season 2 coming soon to Netflix.'}
+		- var site = { title: 'Countdown to Stranger Things Season 2', url: 'http://www.strangerthingscountdown.com', image: 'http://www.strangerthingscountdown.com/assets/images/og-image.jpg', description: 'How much longer do you have to wait until returning to The Upside Down? Stranger Things Season 2 coming soon to Netflix.'}
 		each val, key in site
 			meta(property='og:'+key, content=val)
 
@@ -12,7 +12,7 @@ html
 
 	meta(charset='utf-8')
 	title #{site.title}
-	meta(name='description', content="#{site.description}")
+	meta(name='description', content="How much longer do you have to wait until returning to The Upside Down? Stranger Things Season 2 coming soon to Netflix.")
 	script(src="assets/js/main.js")
 	link(rel="stylesheet", href="assets/css/main.css")
 
@@ -22,10 +22,10 @@ html
 		.share
 			a(class="share-btn share-btn-branded share-btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=www.strangerthingscountdown.com" title="Share on Facebook")
 				span(class="share-btn-icon")
-			a(class="share-btn share-btn-branded share-btn-twitter" target="_blank" href="https://twitter.com/home?status=252%20Days%20until%20%23strangerthings%20returns%20to%20%40netflix.%20%23strangerthingscountdown%20http%3A//www.strangerthingscountdown.com" title="Share on Twitter")
+			a(class="share-btn share-btn-branded share-btn-twitter" target="_blank" href="https://twitter.com/home?status=251%20days%20to%20go%20until%20%40Stranger_Things%20returns%20to%20%40netflix.%0A%0Astrangerthingscountdown.com%20%20%23strangerthingscountdown%20%23StrangerThings" title="Share on Twitter")
 				span(class="share-btn-icon")
 			a(href="https://www.netflix.com/title/80057281" target="_blank" alt="Watch Stanger Things Season one" class="share-btn")
-				span() Watch Season 1 on Netflix
+				span() Watch Season 1
 
 
 		a-scene()
