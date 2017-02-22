@@ -1,6 +1,3 @@
-
-
-
 // set the date we're counting down to
 var target_date = new Date("Oct 31, 2017").getTime();
  
@@ -34,6 +31,15 @@ AFRAME.registerComponent('countdown', {
 
 	init: function(){
 		prev = countdown;
+
+		var scene = document.querySelector('a-scene');
+		scene.addEventListener('enter-vr', function(){
+			ga('send', {
+				hitType: 'event',
+				eventCategory: 'Action',
+				eventAction: 'Entered VR',
+			});
+		})
 	},
 	
 	tick: function () {
