@@ -49,7 +49,7 @@ AFRAME.registerComponent('countdown', {
 			this.el.setAttribute('text', 'text:'+countdown+';font:#thingsFont;');
 		}
 
-		// document.body.setAttribute('data-days', days);
+		document.querySelector('.share-btn-twitter').setAttribute('href', 'https://twitter.com/home?status='+ days +'%20days%20to%20go%20until%20%40Stranger_Things%20returns%20to%20%40netflix.%0A%0Astrangerthingscountdown.com%20%20%23strangerthingscountdown%20%23StrangerThings');
 
 	}
 })
