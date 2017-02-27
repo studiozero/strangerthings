@@ -4,9 +4,6 @@ var target_date = new Date("Oct 31, 2017").getTime();
 // variables for time units
 var days, hours, minutes, seconds, countdown;
 
-var facebook_button = document.querySelector('.share-btn-facebook');
-var twitter_button = document.querySelector('.share-btn-twitter');
-
 var increment = function(){
 
 		var current_date = new Date().getTime();
@@ -42,22 +39,6 @@ AFRAME.registerComponent('countdown', {
 				hitType: 'event',
 				eventCategory: 'Action',
 				eventAction: 'Entered VR',
-			});
-		})
-
-		facebook_button.addEventListener('click', function(){
-			ga('send', {
-				hitType: 'event',
-				eventCategory: 'Share',
-				eventAction: 'Shared on Facebook',
-			});
-		})
-
-		twitter_button.addEventListener('click', function(){
-			ga('send', {
-				hitType: 'event',
-				eventCategory: 'Share',
-				eventAction: 'Shared on Twitter',
 			});
 		})
 	

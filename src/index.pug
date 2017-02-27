@@ -63,3 +63,23 @@ html
 		ga('send', 'pageview');
 
 <!--THIS WAS MADE BY STUDIO ZERO - www.studiozero.co -->
+
+	script.
+		var facebook_button = document.querySelector('.share-btn-facebook');
+		var twitter_button = document.querySelector('.share-btn-twitter');
+
+		facebook_button.addEventListener('click', function(){
+		ga('send', {
+		hitType: 'event',
+		eventCategory: 'Share',
+		eventAction: 'Shared on Facebook',
+		});
+		})
+
+		twitter_button.addEventListener('click', function(){
+		ga('send', {
+		hitType: 'event',
+		eventCategory: 'Share',
+		eventAction: 'Shared on Twitter',
+		});
+		})
