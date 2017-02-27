@@ -4,6 +4,9 @@ var target_date = new Date("Oct 31, 2017").getTime();
 // variables for time units
 var days, hours, minutes, seconds, countdown;
 
+var facebook_button = document.querySelector('.share-btn-facebook');
+var twitter_button = document.querySelector('.share-btn-twitter');
+
 var increment = function(){
 
 		var current_date = new Date().getTime();
@@ -33,6 +36,7 @@ AFRAME.registerComponent('countdown', {
 		prev = countdown;
 
 		var scene = document.querySelector('a-scene');
+		
 		scene.addEventListener('enter-vr', function(){
 			ga('send', {
 				hitType: 'event',
@@ -40,6 +44,23 @@ AFRAME.registerComponent('countdown', {
 				eventAction: 'Entered VR',
 			});
 		})
+
+		facebook_button.addEventListener('click', function(){
+			ga('send', {
+				hitType: 'event',
+				eventCategory: 'Share',
+				eventAction: 'Shared on Facebook',
+			});
+		})
+
+		twitter_button.addEventListener('click', function(){
+			ga('send', {
+				hitType: 'event',
+				eventCategory: 'Share',
+				eventAction: 'Shared on Twitter',
+			});
+		})
+	
 	},
 	
 	tick: function () {
@@ -49,7 +70,8 @@ AFRAME.registerComponent('countdown', {
 			this.el.setAttribute('text', 'text:'+countdown+';font:#thingsFont;');
 		}
 
-		document.querySelector('.share-btn-twitter').setAttribute('href', 'https://twitter.com/home?status='+ days +'%20days%20to%20go%20until%20%40Stranger_Things%20returns%20to%20%40netflix.%0A%0Astrangerthingscountdown.com%20%20%23strangerthingscountdown%20%23StrangerThings');
+		twitter_button.setAttribute('href', 'https://twitter.com/home?status='+ days +'%20days%20to%20go%20until%20%40Stranger_Things%20returns%20to%20%40netflix.%0A%0Astrangerthingscountdown.com%20%20%23strangerthingscountdown%20%23StrangerThings');
 
 	}
 })
+
