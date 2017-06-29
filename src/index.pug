@@ -46,7 +46,13 @@ html
 			a-entity#two(text="text: 2; font: #thingsFont;" scale="5 5 2" position="1 0 5" rotation="0 180 0" material="color:#650505;metalness:0.5; roughness: 0.2; sphericalEnvMap: #background;")
 			
 			a-entity#countdown(position="-2.5 -0.2 -8")
-				a-entity(countdown text-geometry="value: ...starting countdown; font:#thingsFont" position="0 0 0" material="color:#650505;")
+				a-entity(countdown="type:days" text-geometry="value: ...starting countdown; font:#thingsFont" position="0 0 0" material="color:#650505;")
+				a-entity(text-geometry="value: :; font:#thingsFont" position="1.7 0.05 0" material="color:#650505;")
+				a-entity(countdown="type:hours" text-geometry="font:#thingsFont" position="2.1 0 0" rotation="0 0 0" material="color:#650505;")
+				a-entity(text-geometry="value: :; font:#thingsFont" position="3.3 0.05 0" material="color:#650505;")
+				a-entity(countdown="type:minutes" text-geometry="font:#thingsFont" position="3.7 0 0" material="color:#650505;")
+				a-entity(text-geometry="value: :; font:#thingsFont" position="5 0.05 0" material="color:#650505;")
+				a-entity(countdown="type:seconds" text-geometry="font:#thingsFont" position="5.4 0 0" material="color:#650505;")
 
 			a-entity(geometry="primitive:plane;height:0.75;width:1;" material="shader:gif;src:url(http://assets.studiozero.xyz/strangerthings/st.gif);opacity:0.5;", position="2.4 0.4 2", rotation="0 230 0")
 
