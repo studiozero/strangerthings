@@ -1,6 +1,5 @@
 // set the date we're counting down to
 var target_date = new Date("Oct 31, 2017").getTime();
-//var target_date = new Date("Wed Mar 25 2018 12:00:00 GMT+0000 (GMT)").getTime();
 
 // variables for time units
 var days, hours, minutes, seconds;
@@ -35,6 +34,8 @@ var increment = function(){
 		};
 }
 
+var timer = setInterval(increment, 1000)
+
 var pad = function(num, size) {
 	var s = num+"";
 	while (s.length < size) s = "0" + s;
@@ -52,7 +53,6 @@ AFRAME.registerComponent('countdown', {
 
 	init: function(){
 		prev = countdown;
-		var timer = setInterval(increment, 1000)
 		var scene = document.querySelector('a-scene');
 		
 		scene.addEventListener('enter-vr', function(){
