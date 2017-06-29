@@ -47,8 +47,8 @@ AFRAME.registerComponent('countdown', {
 	tick: function () {
 
 		if(prev != countdown){
-			prev = countdown;			
-			this.el.setAttribute('text', 'text:'+countdown+';font:#thingsFont;');
+			prev = countdown;
+			this.el.setAttribute('text-geometry', {value:countdown});
 		}
 
 		twitter_button.setAttribute('href', 'https://twitter.com/home?status='+ days +'%20days%20to%20go%20until%20%40Stranger_Things%20returns%20to%20%40netflix.%0A%0Astrangerthingscountdown.com%20%20%23strangerthingscountdown%20%23StrangerThings');
