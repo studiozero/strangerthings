@@ -19,7 +19,7 @@ html
 
 	body
 		
-		img.netflix(src="assets/images/netflix.png")
+		img.netflix(src="/assets/images/netflix.png")
 		.share
 			a(class="share-btn share-btn-branded share-btn-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=www.strangerthingscountdown.com" title="Share on Facebook")
 				span(class="share-btn-icon")
@@ -27,15 +27,13 @@ html
 			a(class="share-btn share-btn-branded share-btn-twitter" target="_blank" href="https://twitter.com/home?status=248%20days%20to%20go%20until%20%40Stranger_Things%20returns%20to%20%40netflix.%0A%0Astrangerthingscountdown.com%20%20%23strangerthingscountdown%20%23StrangerThings" title="Share on Twitter")
 				span(class="share-btn-icon")
 				span(class="share-btn-text") Share
-			a(href="https://www.netflix.com/title/80057281" target="_blank" alt="Watch Stanger Things Season one" class="share-btn watch-season")
+			a(href="https://www.netflix.com/title/80057281" target="_blank" alt="Watch Stranger Things Season one" class="share-btn watch-season")
 				span() Watch Season 1
-
 
 		a-scene()
 			a-assets
 				a-asset-item#thingsFont(src="assets/fonts/font.json")
-				img#background(src="https://s3.eu-west-2.amazonaws.com/studiozero.xyz/strangerthings/bg.png" crossorigin)
-				//- audio#sound(src="assets/sounds/underwater.mp3" loop autoplay)
+				img#background(src="assets/images/background.png" crossorigin)
 
 			a-entity#person(position="0 1.67 0")
 				a-entity(camera, look-controls)
@@ -54,7 +52,7 @@ html
 				a-entity(text-geometry="value: :; font:#thingsFont" position="5 0.05 0" material="color:#650505;")
 				a-entity(countdown="type:seconds" text-geometry="font:#thingsFont" position="5.4 0 0" material="color:#650505;")
 
-			a-entity(geometry="primitive:plane;height:0.75;width:1;" material="shader:gif;src:url(http://assets.studiozero.xyz/strangerthings/st.gif);opacity:0.5;", position="2.4 0.4 2", rotation="0 230 0")
+			a-entity(geometry="primitive:plane;height:0.75;width:1;" material="shader:gif;src:url(/assets/images/st.gif);opacity:0.5;", position="2.4 0.4 2", rotation="0 230 0")
 
 <!--THIS WAS MADE BY STUDIO ZERO - www.studiozero.co -->
 

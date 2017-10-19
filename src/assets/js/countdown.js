@@ -1,5 +1,5 @@
 // set the date we're counting down to
-var target_date = new Date("Oct 31, 2017").getTime();
+var target_date = new Date("Oct 27, 2017").getTime();
 
 // variables for time units
 var days, hours, minutes, seconds;
@@ -27,7 +27,7 @@ var increment = function(){
 
 		// format countdown string + set tag value
 		countdown = {
-			days: days,
+			days: pad(days, 3),
 			hours: pad(hours,2),
 			minutes: pad(minutes,2),
 			seconds: pad(seconds,2),
