@@ -8,11 +8,11 @@
   "scripts": {
     "start": "npm run watch:html & npm run start:budo & npm run watch:css & npm run watch:images & npm run copy:font & wait",
     "start:budo": "budo src/assets/js/main.js:dist/assets/js/main.js --dir ./dist/ --serve assets/js/main.js --live --verbose --port 3000",
-    "prebuild": "rimraf dist/assets/{css/*,js/*}",
+    "prebuild": "rimraf dist/assets/{css/*,js/*,js}",
     "build": "npm run build:html & npm run build:js & npm run build:css",
     "build:html": "pug src/index.pug -o dist/",
     "build:css": "node-sass src/assets/sass/index.scss dist/assets/css/main.css",
-    "build:js": "browserify src/assets/js/main.js -o dist/assets/js/main.js",
+    "build:js": "mkdir dist/assets/js/ && browserify src/assets/js/main.js -o dist/assets/js/main.js",
     "build:images": "imagemin src/assets/images/* -o dist/assets/images",
     "copy:font": "cp -r src/assets/fonts dist/assets/",
     "copy:models": "cp -r src/assets/models dist/assets/",
